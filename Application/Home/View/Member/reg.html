@@ -21,7 +21,7 @@
             <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                 <div class="layui-tab-item layui-show">
                     <div class="layui-form layui-form-pane">
-                        <form method="post">
+                        <form method="post" class="ajaxform" action="{:U('Home/member/reg')}">
                             <div class="layui-form-item">
                                 <label for="L_email" class="layui-form-label">邮箱</label>
                                 <div class="layui-input-inline">
@@ -76,7 +76,9 @@
 
 <include file="common:footer" />
 <script src="__PUBLIC__/flyres/layui/layui.js"></script>
-
+<script src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/js/jquery.form.min.js"></script>
+<script src="__PUBLIC__/js/commonwehome.js"></script>
 
 </body>
 </html>

@@ -44,21 +44,3 @@ function msg_url(info,url,reload){
 }
 
 
-obj = document.getElementById("isread");
-if (obj){
-    function Unread()
-    {
-        $(document).ready(function() {
-            $.post("/Wehome/message/isread", '',
-                function(data){
-                    console.log(data.time); //  2pm
-                    if(data.is_read==0){
-                        $("#isread").show();
-                    }else{
-                        $("#isread").hide();
-                    }
-                }, "json");
-        });
-    }
-    setInterval('Unread()',2000);
-}

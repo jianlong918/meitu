@@ -103,12 +103,12 @@
                     <?php } ?>
 
                     <?php if($auth->check( 'admin/shop', session('uid') )){ ?>
-                    <!--<li>-->
-                        <!--<a href="#">-->
-                            <!--<i class="fa fa-dashboard"></i>-->
-                            <!--<span class="nav-label">商城模块管理</span>-->
-                            <!--<span class="fa arrow"></span>-->
-                        <!--</a>-->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i>
+                            <span class="nav-label">商城模块管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
                         <ul class="nav nav-second-level">
                             <?php if($auth->check( 'admin/shoptype', session('uid') )){ ?>
                             <li>
