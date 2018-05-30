@@ -14,27 +14,10 @@
                         <form role="form" name="searchform" method="get" class="form-inline" >
 
                             <div class="form-group">
-                                <label >会员真实姓名</label>
+                                <label >会员名</label>
                                 <input class="form-control" type="text" name="name" value="{$search['real_name']}">
                             </div>
 
-                            <div class="form-group">
-                                <label >等级</label>
-                                <select name="level"  class="form-control">
-                                    <option value="">请选择</option>
-                                    <volist name="level" id="vo">
-                                        <option value="{$vo.id}" <if condition="$search['level'] eq $vo['id']">selected</if> >{$vo.level_name}</option>
-                                    </volist>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label >电话</label>
-                                <input class="form-control" type="text" name="tel" value="{$search['tel']}">
-                            </div>
-                            <div class="form-group">
-                                <label >身份证号</label>
-                                <input class="form-control" type="text" name="id_sn" value="{$search['id_sn']}">
-                            </div>
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-outline btn-success" >搜索</button>
@@ -48,48 +31,22 @@
                             <thead>
                             <tr>
                                 <th>id</th>
-                                <th>真实姓名</th>
-                                <th>联系方式</th>
-                                <th>身份证号</th>
-                                <th>余额</th>
-                                <th>会员等级</th>
-                                <th>添加时间</th>
-                                <th>更新时间</th>
-                                <php>if($auth->check( 'admin/shopmember/recharge',  session('uid') )||$auth->check( 'admin/shopmember/change_level',  session('uid') )||$auth->check( 'admin/shopmember/pay_log',  session('uid') )){</php>
+                                <th>会员名</th>
+                                <th>注册时间</th>
+                                <th>到期时间</th>
                                 <th>操作</th>
-                                <php>}</php>
                             </tr>
                             </thead>
                             <tbody id="formlist">
                             <volist name="data.list" id="vo">
                                 <tr class="odd gradeA">
                                     <td>{$vo.id}</td>
-                                    <td>{$vo.real_name}</td>
-                                    <td>{$vo.tel}</td>
-                                    <td>{$vo.id_sn}</td>
-                                    <td>{$vo.balance}</td>
-                                    <td>{:getFieldShow('s_level','level_name',array('id'=>$vo['level_id']))}</td>
+                                    <td>{$vo.nickname}</td>
                                     <td>{$vo.created_at}</td>
-                                    <td>{$vo.updated_at}</td>
-                                    <php>if($auth->check( 'admin/shopmember/recharge',  session('uid') )||$auth->check( 'admin/shopmember/change_level',  session('uid') )||$auth->check( 'admin/shopmember/pay_log',  session('uid') )){</php>
+                                    <td>{$vo.expire_at}</td>
                                     <td class="center">
-                                        <php>if($auth->check( 'admin/shopmember/change_level',  session('uid') )){</php>
-                                        <a href="javascript:void(0);" onclick="change_level({$vo.id})" class="badge badge-danger">改变等级</a>&nbsp;&nbsp;
-                                        <php>}</php>
-                                        <php>if($auth->check( 'admin/shopmember/pay_log',  session('uid') )){</php>
-                                        <a href="/admin/shopmember/pay_log?id={$vo.id}" class="badge badge-primary">流水明细</a>&nbsp;&nbsp;
-                                        <php>}</php>
-
-                                        <php>if($auth->check( 'admin/shopmember/del',  session('uid') )){</php>
-                                            <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:U('del')}" data-id="{$vo.id}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
-                                        <php>}</php>
-                                        <php>if($auth->check( 'admin/shopmember/recharge',  session('uid') )){</php>
-                                        <if condition="$vo.level_id gt 1">
-                                            <a href="javascript:void(0);" onclick="recharge({$vo.id})" class="badge badge-success">积分变动</a>&nbsp;&nbsp;
-                                        </if>
-                                        <php>}</php>
+                                        <a href="/admin/shopmember/update?id={$vo.id}" class="badge badge-danger">编辑</a>&nbsp;&nbsp;
                                     </td>
-                                    <php>}</php>
                                 </tr>
                             </volist>
                             </tbody>

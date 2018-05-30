@@ -1,67 +1,67 @@
-<extend name="common:base" />
-<block name="body">
-    <body class="gray-bg">
-    <div class="wrapper wrapper-content animated fadeInRight">        
-        <div class="row">
-            <div class="col-sm-6" style='width: 100%'>
-                <div class="ibox">
-                    <div class="ibox-title">
-                        <h5>用户组管理</h5>
-                        <php>if($auth->check( 'admin/usergroup/add',  session('uid') )){</php>
-                    <a href="{:U('admin/usergroup/add')}" class="btn btn-info btn-xs" style='margin-left: 20px'>添加</a>
-                    <php>}</php>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>id</th>
-                                    <th>名称</th>
-                                    <th>状态</th>
-                                    <php>if($auth->check( 'admin/usergroup/update',  session('uid') )||$auth->check( 'admin/usergroup/del',  session('uid') )||$auth->check( 'admin/usergroup/purview',  session('uid') )){</php>
-                                    <th>操作</th>
-                                    <php>}</php>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                 <volist name="list" id="vo">
-                            <tr class="odd gradeX">
-                                <td>{$vo.id}</td>
-                                <td>{$vo.title}</td>
-                                <td><if condition="$vo.status eq 1">启用 <elseif condition="$vo.status eq 0"/>禁用</if></td>
-                                <php>if($auth->check( 'admin/usergroup/update',  session('uid') )||$auth->check( 'admin/usergroup/del',  session('uid') )||$auth->check( 'admin/usergroup/purview',  session('uid') )){</php>
-                                <td class="center">
-                                    <php>if($auth->check( 'admin/usergroup/update',  session('uid') )){</php>
-                                    <a href="/admin/usergroup/update?id={$vo.id}" class="badge badge-primary">修改</a>&nbsp;&nbsp;
-                                    <php>}</php>
-                                    <php>if($auth->check( 'admin/usergroup/del',  session('uid') )){</php>
-                                    <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:u('del')}" data-id="{$vo.id}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
-                                    <php>}</php>
-                                    <php>if($auth->check( 'admin/usergroup/purview',  session('uid') )){</php>
-                                    <a a href="/admin/usergroup/purview?id={$vo.id}" class="badge badge-success">权限操作</a>&nbsp;&nbsp;
-                                    <php>}</php>
-                                </td>
-                                <php>}</php>
-                            </tr>
-                        </volist>
-                            </tbody>
-                        </table>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="pagination" >共{$count}条</div>
-                            <ul class="pagination">{$page}</ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-
-        </div>
-    </div>
-
-</block>
-<block name="footer">
-
-</block>
+<extend name="common:base" />
+<block name="body">
+    <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">        
+        <div class="row">
+            <div class="col-sm-6" style='width: 100%'>
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>用户组管理</h5>
+                        <php>if($auth->check( 'admin/usergroup/add',  session('uid') )){</php>
+                    <a href="{:U('admin/usergroup/add')}" class="btn btn-info btn-xs" style='margin-left: 20px'>添加</a>
+                    <php>}</php>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>名称</th>
+                                    <th>状态</th>
+                                    <php>if($auth->check( 'admin/usergroup/update',  session('uid') )||$auth->check( 'admin/usergroup/del',  session('uid') )||$auth->check( 'admin/usergroup/purview',  session('uid') )){</php>
+                                    <th>操作</th>
+                                    <php>}</php>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <volist name="list" id="vo">
+                            <tr class="odd gradeX">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.title}</td>
+                                <td><if condition="$vo.status eq 1">启用 <elseif condition="$vo.status eq 0"/>禁用</if></td>
+                                <php>if($auth->check( 'admin/usergroup/update',  session('uid') )||$auth->check( 'admin/usergroup/del',  session('uid') )||$auth->check( 'admin/usergroup/purview',  session('uid') )){</php>
+                                <td class="center">
+                                    <php>if($auth->check( 'admin/usergroup/update',  session('uid') )){</php>
+                                    <a href="/admin/usergroup/update?id={$vo.id}" class="badge badge-primary">修改</a>&nbsp;&nbsp;
+                                    <php>}</php>
+                                    <php>if($auth->check( 'admin/usergroup/del',  session('uid') )){</php>
+                                    <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:u('del')}" data-id="{$vo.id}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
+                                    <php>}</php>
+                                    <php>if($auth->check( 'admin/usergroup/purview',  session('uid') )){</php>
+                                    <a a href="/admin/usergroup/purview?id={$vo.id}" class="badge badge-success">权限操作</a>&nbsp;&nbsp;
+                                    <php>}</php>
+                                </td>
+                                <php>}</php>
+                            </tr>
+                        </volist>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="pagination" >共{$count}条</div>
+                            <ul class="pagination">{$page}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</block>
+<block name="footer">
+
+</block>

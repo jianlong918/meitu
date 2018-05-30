@@ -127,3 +127,10 @@ SQL: INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,
 SQL: SHOW COLUMNS FROM `yu_n_addonarticle` [ RunTime:0.0050s ]
 SQL: INSERT INTO `yu_n_addonarticle` (`aid`,`typeid`,`body`) VALUES ('2','10','<p>123</p>') [ RunTime:0.0070s ]
 
+[ 2018-05-30T17:05:31+08:00 ] 127.0.0.1 /Admin/login/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yu_user` WHERE ( userName='admin' and password='0ac91bfee1788fb7419cd90009feaa14' ) LIMIT 1   [ RunTime:0.0010s ]
+

@@ -1,52 +1,52 @@
-<extend name="common:base" />
-<block name="body">
-
-    <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox">
-                    <div class="ibox-title">
-                        <h5>回复列表</h5>
-                    </div>
-
-                    <div class="ibox-content">
-                        <p style="line-height: 10px;"></p>
-                        <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>管理员</th>
-                                <th>会员姓名</th>
-                                <th style="width: 550px;">留言内容</th>
-                                <th>添加时间</th>
-                            </tr>
-                            </thead>
-                            <tbody id="formlist">
-                            <volist name="data.list" id="vo">
-                                <tr class="odd gradeA">
-                                    <td>{$vo.id}</td>
-                                    <td style="color:#1D84C6">{:getFieldShow('user','username',array('id'=>$vo['adminid']))}</td>
-                                    <td>{:getFieldShow('s_member','real_name',array('id'=>$vo['mid']))}</td>
-                                    <td>{$vo.content}</td>
-                                    <td>{$vo.created_at}</td>
-                                </tr>
-                            </volist>
-                            </tbody>
-                        </table>
-                         </div>
-                        <div class="col-lg-12" style="float: none">
-                            <div class="pagination" >共{$data.count}条</div>
-                            <button type="button" style="margin-left: 50px;" onclick="history.go(-1)" class="btn btn-w-m btn-default">&nbsp;返回</button>
-                            <ul class="pagination" id="page" style="float: right">{$data.page}</ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    </div>
-</block>
-
-
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>回复列表</h5>
+                    </div>
+
+                    <div class="ibox-content">
+                        <p style="line-height: 10px;"></p>
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>管理员</th>
+                                <th>会员姓名</th>
+                                <th style="width: 550px;">留言内容</th>
+                                <th>添加时间</th>
+                            </tr>
+                            </thead>
+                            <tbody id="formlist">
+                            <volist name="data.list" id="vo">
+                                <tr class="odd gradeA">
+                                    <td>{$vo.id}</td>
+                                    <td style="color:#1D84C6">{:getFieldShow('user','username',array('id'=>$vo['adminid']))}</td>
+                                    <td>{:getFieldShow('s_member','real_name',array('id'=>$vo['mid']))}</td>
+                                    <td>{$vo.content}</td>
+                                    <td>{$vo.created_at}</td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                         </div>
+                        <div class="col-lg-12" style="float: none">
+                            <div class="pagination" >共{$data.count}条</div>
+                            <button type="button" style="margin-left: 50px;" onclick="history.go(-1)" class="btn btn-w-m btn-default">&nbsp;返回</button>
+                            <ul class="pagination" id="page" style="float: right">{$data.page}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</block>
+
+
