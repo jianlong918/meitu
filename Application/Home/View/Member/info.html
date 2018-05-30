@@ -1,0 +1,31 @@
+<extend name="common:base" />
+<block name="body">
+<include file="common/header_nav_title" />
+    <p style="height:50px"></p>
+    <form action="{:U('Wehome/member/editinfo')}" method="post" class="ajaxform">
+    <div class="people">
+        <h1><img src="{$avator}"></h1>
+
+        <div class="nicheng" style="border-top:solid 1px #dcdcdc;">
+            <p><label>微信昵称</label><span  class="rt"  >	{$nickname}</span></p>
+
+        </div>
+        <div class="nicheng" >
+            <p><label>会员等级</label><span  class="rt"   >{$meminfo.level}</span></p>
+        </div>
+        <p style="height:20px"></p>
+        <div class="nicheng" style="border-top:solid 1px #dcdcdc;">
+            <p><label>真实姓名</label><input type="text" name="real_name" class="rt" placeholder="输入真实姓名" value="{$meminfo.real_name}" ></p>
+        </div>
+        <div class="nicheng" >
+            <p><label>联系电话</label><input type="number" name="tel" class="rt"  placeholder="输入电话" value="{$meminfo.tel}"></p>
+        </div>
+        <div class="nicheng" >
+            <p><label>身份证号</label><input type="text" name="id_sn" class="rt"  placeholder="输入身份证号" value="{$meminfo.id_sn}"></p>
+        </div>
+        <button class="btn" type="submit">保存编辑信息</button>
+    </div>
+    </form>
+    <p style="height:70px"></p>
+<include file="common/footer_nav" />
+</block>

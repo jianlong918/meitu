@@ -1,0 +1,109 @@
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>订单编号</th>
+                                <th>会员id</th>
+                                <th>会员姓名</th>
+                                <th>入住房间</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>消费积分</th>
+                                <th>状态</th>
+                                <th>添加时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeA">
+                                    <td>{$order.id}</td>
+                                    <td>{$order.order_sn}</td>
+                                    <td>{$order.mid}</td>
+                                    <td>{:getFieldShow('s_member','real_name',array('id'=>$order['mid']))}</td>
+                                    <td>{:getFieldShow('s_product','name',array('id'=>$order['product_id']))}</td>
+                                    <td>{$order.begin_time}</td>
+                                    <td>{$order.end_time}</td>
+                                    <td>{$order.total}</td>
+                                    <td>{:getConfig('status',$order['status'])}</td>
+                                    <td>{$order.created_at}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>联系方式</th>
+                                    <th>身份证号</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <volist name="order_person" id="vo">
+                                    <tr class="odd gradeA">
+                                        <td>{$vo.name}</td>
+                                        <td>{$vo.tel}</td>
+                                        <td>{$vo.id_sn}</td>
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <if condition="$order.status neq 6">
+                    <button type="button" class="change_btn btn btn-w-m btn-danger" data-status="1">&nbsp;处理中</button>
+                    <button type="button" class="change_btn btn btn-w-m btn-success" data-status="2">&nbsp;待入住</button>
+                    <button type="button" class="change_btn btn btn-w-m btn-primary" data-status="3">&nbsp;已完成</button>
+                    </if>
+                    <button type="button" onclick="history.go(-1)" class="btn btn-w-m btn-default">&nbsp;返回</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+    <script>
+        $('.change_btn').click(function(){
+            var msg='确定要修改预约状态吗？'
+            var status=$(this).attr('data-status')
+            layer.confirm(msg, {
+                        btn: ['确定','取消'], //按钮
+                    }, function(index){
+                        var order_id="{$order.id}"
+                        $.post("{:U('admin/shoporder/change_status')}", {"status":status,"order_id":order_id},
+                                function(data){
+                                    msg_url(data.info);
+                                    if(data.status==1){
+                                        window.setTimeout("location.reload()",1000);
+                                    }
+                                }, "json");
+                        layer.close(index);
+                    }
+            );
+        })
+    </script>
+</block>
+
+

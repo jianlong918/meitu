@@ -1,0 +1,121 @@
+<extend name="common:base" />
+<block name="body">
+    <div class="wrapper wrapper-content animated fadeInRight" style="min-height: 250px;">
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        修改用户
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form role="form" class="ajaxform form-horizontal" action="{:U('admin/user/usave')}"  method="post">
+                                    <div class="form-group ">
+                                        <label  class="col-sm-2 control-label">用户名</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control"  type="text"   name="username" value="{$uarr.username}" style="max-width:300px;">
+                                            <input type="hidden" value="{$uarr.id}" name="id"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"><span style="color:#F77DA6;">*</span>用户组</label>
+                                        <div class="col-sm-10" style="line-height: 33px; height: 33px;" >
+                                            <volist name="usergroup" id="vo">
+                                                <input type="radio" class="radio i-checks" name="usergroup" value="{$vo.id}" <if condition="$uarr.usergroup eq $vo['id']">checked="checked" </if> >{$vo.title}&nbsp;&nbsp;
+                                            </volist>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">邮箱</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control"  type="text"  name="email" value="{$uarr.email}"  style="max-width:300px;" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">真实姓名</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control"  type="text"  name="realname" value="{$uarr.realname}" style="max-width:300px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">性别</label>
+                                        <div class="col-sm-10" style="line-height: 33px; height: 33px;">
+
+                                            <input class="radio i-checks" type="radio" name="sex" value="1" <if condition="$uarr.sex eq 1">checked="checked" </if>> 男
+
+                                            <input class="radio i-checks" type="radio" name="sex" value="2"<if condition="$uarr.sex eq 2">checked="checked" </if>> 女
+
+                                            <input class="radio i-checks"  type="radio" name="sex" value="0"<if condition="$uarr.sex eq 0">checked="checked" </if>>  保密
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系电话</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control"  type="text"  name="tel" value="{$uarr.tel}" style="max-width:300px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">手机</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control"  type="text"  name="mobile" value="{$uarr.mobile}" style="max-width:300px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">传真</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control"  type="text"  name="fax" value="{$uarr.fax}" style="max-width:300px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系地址</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control"  type="text"   name="address" value="{$uarr.address}" style="max-width:300px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">状态</label>
+                                        <div class="col-sm-8" style="line-height: 33px; height: 33px;" >
+
+                                            <input class="radio i-checks" type="radio" name="status" value="1" <if condition="$uarr.status eq 1">checked="checked" </if> > 启用
+
+                                            <input class="radio i-checks" type="radio" name="status" value="0" <if condition="$uarr.status eq 0">checked="checked" </if> > 禁用
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-w-m btn-info"><i class="fa fa-check"></i>&nbsp;提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                            <div class="col-lg-6">
+
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+
+</block>
+<block name="footer">
+</block>

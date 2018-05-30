@@ -1,0 +1,82 @@
+<extend name="common:base" />
+<block name="body">
+    <div class="head" style=" padding:14px 0">
+
+        <div class="p2" style="top:14px">
+            <a style="color:#fff;" href="javascript:history.go(-1);"><img src="__PUBLIC__/Wehome/img/o1.jpg"></a>
+        </div>
+        <p class="p1">消息</p>
+        <div class="p4" style="top:14px; right:15px;" id="del">
+            编辑
+        </div>
+
+    </div>
+    <p style="height:60px"></p>
+    <volist name="message" id="vo">
+    <div class="shanbox">
+        <div class="shan">
+            <div class="shanleft">
+                <dl>
+                    <dt><img src="__PUBLIC__/Wehome/img/tx1.jpg" width="100%"></dt>
+                    <dd>
+                        <h3>{$vo.type}<span>{$vo.created_at}</span></h3>
+                        <p>{$vo.content}</p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="shanright">
+                <a href="javascript:void(0)" onclick="del_message({$vo.id})">删除</a>
+            </div>
+        </div>
+    </div>
+    </volist>
+    <span id="add_content" style="height: 0px;"></span>
+</block>
+<block name="foot_js">
+    <script>
+        $(function() {
+            /*瀑布流*/
+            var page = 1;
+            var loading = false;
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height() ) {
+                    loadMore();
+                }
+            });
+
+            function loadMore() {
+                if (loading === false) {
+                    loading = true;
+                    $.post("{:U('member/more_message')}", {page: page}, function(data) {
+                        if (data.status==1) {
+                            page++;
+                            var content=data.content
+                            $("#add_content").append(content);
+                            loading = false;
+                        } else {
+                            msg_url(data.info);
+                        }
+                    }, 'json');
+                } else {
+                    return;
+                }
+            }
+        });
+
+        function del_message(id){
+            $.post("{:U('member/message_del')}", {"id":id},
+                    function(data){
+                        msg_url(data.info);
+                        if(data.status==1){
+                            window.setTimeout("location.reload()",1000);
+                        }
+                    }, "json");
+        }
+    </script>
+     <script>
+        $(document).ready(function() {
+            $.post("{:U('message/readmessage')}");
+        });
+    </script>
+</block>

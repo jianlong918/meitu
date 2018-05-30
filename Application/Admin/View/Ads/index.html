@@ -1,0 +1,71 @@
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-6" style='width: 100%'>
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>广告管理</h5>
+                        <php>if($auth->check( 'admin/ads/add',  session('uid') )){</php>
+                        <a href="{:U('admin/ads/add')}" class="btn btn-info btn-xs" style='margin-left: 20px'>添加</a>
+                        <php>}</php>
+                    </div>
+
+                    <div class="ibox-content">
+                        <p style="line-height: 10px;"></p>
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>广告标题</th>
+                                    <th>位置</th>
+                                    <th>位置标识</th>
+                                    <th>链接</th>
+                                    <th>排序</th>
+                                    <th>图片</th>
+                                    <php>if($auth->check( 'admin/ads/update',  session('uid') )||$auth->check( 'admin/ads/del',  session('uid') )){</php>
+                                    <th>操作</th>
+                                    <php>}</php>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <volist name="data.list" id="vo">
+                                        <tr class="odd gradeA">
+                                            <td>{$vo.id}</td>
+                                            <td>{$vo.title}</td>
+                                            <td>{$vo.position}</td>
+                                            <td>{$vo.position_sn}</td>
+                                            <td>{$vo.url}</td>
+                                            <td>{$vo.sortrank}</td>
+                                            <td><img src="{$vo.img}" height="150px;"></td>
+                                            <php>if($auth->check( 'admin/ads/update',  session('uid') )||$auth->check( 'admin/ads/del',  session('uid') )){</php>
+                                            <td class="center">
+                                                <php>if($auth->check( 'admin/ads/update',  session('uid') )){</php>
+                                                <a href="/admin/ads/update?id={$vo.id}" class="badge badge-primary">修改</a>&nbsp;&nbsp;
+                                                <php>}</php>
+                                                <php>if($auth->check( 'admin/ads/del',  session('uid') )){</php>
+                                                <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:u('del')}" data-id="{$vo.id}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
+                                                <php>}</php>
+                                            </td>
+                                            <php>}</php>
+                                        </tr>
+                                    </volist>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="col-lg-12" style="float: none">
+                            <div class="pagination" >共{$data.count}条</div>
+                            <ul class="pagination" id="page" style="float: right">{$data.page}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+</block>
+

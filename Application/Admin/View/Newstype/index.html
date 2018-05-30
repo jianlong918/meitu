@@ -1,0 +1,42 @@
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-6" style='width: 100%'>
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>栏目管理</h5>
+                        <php>if($auth->check( 'admin/newstype/add',  session('uid') )){</php>
+                        <a href="{:U('admin/newstype/add/pid/0')}" class="btn btn-info btn-xs" style='margin-left: 20px'>添加顶级栏目</a>
+                        <php>}</php>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>栏目名称</th>
+                                    <th>排序</th>
+                                    <php>if($auth->check( 'admin/newstype/update',  session('uid') )||$auth->check( 'admin/newstype/del',  session('uid') )||$auth->check( 'admin/newstype/add',  session('uid') )){</php>
+                                    <th>操作</th>
+                                    <php>}</php>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               {$show}
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+
+</block>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$atype['typename']}</title>
+    <meta charset="utf8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0, user-scalable=no" />
+    <script language="javascript" type="text/javascript">
+        $(function(){
+            $("a[_for]").mouseover(function(){
+                $(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+                $(this).addClass("thisclass").blur();
+                $("#"+$(this).attr("_for")).show();
+            });
+            $("a[_for=uc_member]").mouseover();
+            $("a[_for=flink_1]").mouseover();
+        });
+
+    </script>
+
+    <link href="__PUBLIC__/mn/css/body.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/mn/css/public.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/mn/css/sive.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<include file="common_mn/header" />
+<div class="body" style="text-align: left;padding-top: 20px;">
+    {$atype['content']}
+    <include file="common_mn/footer" />
+
+</div>
+</body>
+</html>

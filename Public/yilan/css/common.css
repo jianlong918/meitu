@@ -1,0 +1,203 @@
+﻿@charset "utf-8";
+/*公用样式*/
+/*@media screen and (max-width: 1684px) {
+    body {
+        zoom: 0.75;
+    }
+}*/
+*{margin:0;padding:0;color:#646464;font-size:14px;font-family:微软雅黑,Tahoma,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+*,:after,:before{box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box}
+:after,:before{display:none;content:""}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+img{outline:none;border:none;}
+i{font-style: normal;}
+a{color:inherit;text-decoration:none;font-size:inherit;}
+a,a img{cursor:pointer}
+a img{outline:none;border:none;}
+ul,li{list-style:none}
+/*a:link,a:visited{color:#646464;text-decoration:none}*/
+html{text-size-adjust:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-o-text-size-adjust:none;-ms-text-size-adjust:none}
+body,html{width:100%}
+body{position:relative;min-height:100%;min-width:1200px;}
+body,div,ol,p,span,ul{word-break:break-all;/*允许在单词内换行*/}
+
+/*初始化各种表单的样式*/
+button,input,select,textarea{outline:none;border:none;background-color:#fff}
+input[type=button],input[type=email],input[type=password],input[type=reset],input[type=submit],input[type=tel],input[type=text]{border-radius:0;}
+textarea{resize:none;}
+/*清除select的自带样式*/
+select,textarea{-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;overflow: hidden;}
+select::-ms-expand{display: none;}
+/*设置input中placeholder的字体颜色*/
+::-webkit-input-placeholder{color:#ccc}
+:-moz-placeholder,::-moz-placeholder{color:#ccc}
+:-ms-input-placeholder{color:#ccc}
+
+/*input[type=number]自带样式消除*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+input[type='number']{
+	border:none;
+}
+
+/*一些常用class名*/
+.fl{float:left}
+.fr{float:right}
+.fr_i{float:right !important}
+.fl_i{float:left !important}
+.clear{clear:both}
+.show{display:block}
+.hidden{display:none}
+.hidden_i{display:none !important;}
+.white{color:#fff}
+.whitebg{background:#fff}
+.f5bg{background-color:#f5f5f5}
+.bolder{font-weight:bolder}
+.content12{width:1200px; margin:0px auto;}
+.mgTop100{margin-top:100px;}
+.mgBott50{margin-bottom:100px;}
+.mgTop50{margin-top:50px;}
+/*绝对定位元素  相对父级元素上下左右居中*/
+.vh-center{display:block; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);}
+.sura{position:relative;display:inline-block;width:100%;height:100%;vertical-align:middle}
+/*.trall{-webkit-transition:all .25s!important;transition:all .25s!important;-ms-transition:all .25s}*/
+.wmline{text-decoration:line-through}
+.rel{position:relative}
+.abs{position:absolute}
+.inb{display:inline-block}
+.center{text-align:center;}
+.txtl{text-align:left}
+.txtr{text-align:right}
+
+/*溢出隐藏*/
+.wordlih1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/*.wordlih2{-webkit-line-clamp:2}
+.wordlih2,.wordlih3{display:-webkit-box;overflow:hidden;margin:3px 0;max-height:2.3em;font-size:12px;line-height:1.2!important;-webkit-box-orient:vertical}
+.wordlih3{-webkit-line-clamp:3}*/
+
+/*遮罩层*/
+.mask{position:fixed;top:0;left:0;z-index:99999999;width:100%;height:100%;background:rgba(0,0,0,.7);} /*background:rgba(0,0,0,.7)为了更好的兼容浏览器也可以用透明图片代替*/
+
+.pointer{cursor:pointer}
+.f10{font-size:10px}
+.f12{font-size:12px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f18{font-size:18px}
+.f20{font-size:20px}
+.f22{font-size:22px}
+.f24{font-size:24px}
+.f26{font-size:26px}
+.f28{font-size:28px}
+.f30{font-size:30px}
+.f32{font-size:32px}
+.f36{font-size:36px}
+.c32{color:#323232;}
+.c64{color:#646464;}
+.cfff{color:#fff;}
+.h5{height:5px}
+.h10{height:10px}
+.h15{height:15px}
+.h20{height:20px}
+.h30{height:30px}
+.h40{height:40px}
+.h50{height:50px}
+.h60{height:60px}
+.w100{width:100%}
+.h100{height:100%}
+/*一行中的所有列被平分*/
+.mui-flex {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;}
+.mui-flex>.cell{display:block;padding:0!important;position:relative;width:0;max-width:100%;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-flex-basis:0;-ms-flex-preferred-size:0;flex-basis:0; text-align: center;}
+
+/*上下左右对齐样式*/
+/*父元素样式*/
+/*父元素设置弹性布局*/
+.fbox{display: -webkit-box; display: -moz-box; display: -ms-box; display: -o-box; display: box;}
+/*父元素设置弹性布局  并且子元素上下对齐  水平对齐*/
+.cbox{-webkit-box-align:center; -moz-box-align:center; -o-box-align:center; -ms-box-align:center; box-align:center;/*垂直对齐*/
+	-webkit-box-pack:center; -moz-box-pack:center; -o-box-pack:center; -ms-box-pack:center; box-pack:center;/*水平对齐*/
+	display: -webkit-box; display: -moz-box; display: -ms-box; display: -o-box; display: box; }
+/*父元素设置弹性布局 并且子元素上下对齐 水屏靠左*/
+.lbox{-webkit-box-align:center; -moz-box-align:center; -o-box-align:center; -ms-box-align:center; box-align:center;/*垂直对齐*/
+	-webkit-box-pack:start; -moz-box-pack:start; -o-box-pack:start; -ms-box-pack:start; box-pack:start;/*水平靠左*/
+	display: -webkit-box; display: -moz-box; display: -ms-box; display: -o-box; display: box; }
+
+.cpack{-webkit-box-pack:center; -moz-box-pack:center; -o-box-pack:center; -ms-box-pack:center; box-pack:center;/*水平靠左*/
+	display: -webkit-box; display: -moz-box; display: -ms-box; display: -o-box; display: box; }	
+.flex1{-webkit-box-flex:1; -moz-box-flex:1; -ms-box-flex:1; -o-box-flex:1;box-flex:1;}
+
+
+/*分页样式*/
+.pagingBox{ height:50px; line-height:50px; position: relative; display:inline-block; overflow:hidden; margin:20px auto; }
+.pagingBox li a{ width:100%;color:#fff; height:100%; position: relative; display: block;  }
+.pagingBox li{ float:left; width:28px;background:#C0C0C0; border:1px solid #E2E2E2; height:28px; line-height:28px; overflow:hidden; text-align:center; margin-left:15px; }
+.pagingBox li:hover{ background:#BF3A48; border:1px solid #E1A2A8; }
+.page_s{ background:#BF3A48 !important; border:1px solid #E1A2A8 !important; }
+.pagingBox li.page_num:hover{ background:#BF3A48; }
+.page_on{background:#BF3A48 !important;border:1px solid #E1A2A8 !important; }
+.pageinp{ overflow:hidden;  height:28px; line-height:28px; margin-left:10px; }
+.pageinp p{ display:inline-block; }
+.goPage{ width:120px;margin-left:10px;}
+.goPage input{ width:60px; height:27px; border:1px solid #ddd; text-align:center; margin-left:5px; margin-right:5px; }
+.okPage{ width:100px; height:30px; }
+.okPage a{ width:100%; height:100%; }
+.okPage a{ display:inline-block; height:28px; width:72px; margin-left: 10px; background:#00a8a2; color:#fff;  }
+.okPage a:hover{ opacity: 0.9;  }
+.points{background:none !important;border:none !important;}
+
+
+/*IE8及以下浏览器不支持H5新标签, 它们在默认情况下表现为内联元素，所以要初始化这些标签的css为块状元素方便布局*/
+header,nav,footer,section,aside,article,video,audio,canvas,menu,figure,abbr,datalist,
+details, dialog, eventsource,hgroup, mark,  meter, , output, progress, time, {display: block;}
+
+
+.fix{width: 85px;text-align: center;border-radius: 5px;position: fixed;right: 0;bottom: 150px;z-index: 999;}
+.fix li{height: 67px;background: #424c52;line-height: 92px; cursor: pointer;}
+.fix li:nth-child(4){padding-top:5px;padding-left:11px;height: 40px;border-top: 1px solid #fff; line-height: 40px;}
+.fix span{color: #fff;position: relative;top: -6px;font-size: 18px;}
+.fix img{height: 40px;}
+.fix li:nth-child(4) img{height: 23px;}
+.fix li:hover{background: #657a86;}
+
+
+
+
+/*临时添加*/
+.footer_popupz{
+	width: 100%;
+	height: 10px;
+	position: relative;
+}
+.footer_popup4,.footer_popup5,.footer_popup6,.footer_popup2,.footer_popup3{
+	margin: 0 !important;
+    padding: 0 !important;
+    width: 260px !important;
+    height: 206px !important;
+    position: absolute !important;
+    top: -149px;
+    left: -10px;
+    background: url(../img/2020.png) center center no-repeat;
+}
+.footer_popup5{
+	left: 230px;
+	background: url(../img/2019.png) center center no-repeat;
+}
+.footer_popup6{
+	left: 470px;
+	background: url(../img/2018.png) center center no-repeat;
+}
+.footer_popup2{
+	left: 710px;
+	background: url(../img/2017.png) center center no-repeat;
+}
+.footer_mode:after{
+	clear:both;content:'.';display:block;width: 0;height: 0;visibility:hidden;
+}
+
+

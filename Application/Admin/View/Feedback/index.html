@@ -1,0 +1,146 @@
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>留言管理</h5>
+                        <php>if($auth->check( 'admin/feedback/del_many',  session('uid') )){</php>
+                        <a href="javascript:void(0)" onclick="confirm_del_many()" class="btn btn-danger btn-xs" style='margin-left: 20px'>删除</a>
+                        <php>}</php>
+                    </div>
+
+                    <div class="ibox-content">
+                        <p style="line-height: 10px;"></p>
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" onclick="checkAll(this)" ></th>
+                                <th>id</th>
+                                <th>会员id</th>
+                                <th>会员姓名</th>
+                                <th style="width: 550px;">留言内容</th>
+                                <th>添加时间</th>
+                                <php>if($auth->check( 'admin/feedback/reply_index',  session('uid') )||$auth->check( 'admin/feedback/reply',  session('uid') )||$auth->check( 'admin/feedback/del',  session('uid') )){</php>
+                                <th>操作</th>
+                                <php>}</php>
+                            </tr>
+                            </thead>
+                            <tbody id="formlist">
+                            <volist name="data.list" id="vo">
+                                <tr class="odd gradeA">
+                                    <td><input type="checkbox" name="ids[]" value={$vo.id}></td>
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.mid}</td>
+                                    <td>{:getFieldShow('s_member','real_name',array('id'=>$vo['mid']))}</td>
+                                    <td>{$vo.content}</td>
+                                    <td>{$vo.created_at}</td>
+                                    <php>if($auth->check( 'admin/feedback/reply_index',  session('uid') )||$auth->check( 'admin/feedback/reply',  session('uid') )||$auth->check( 'admin/feedback/del',  session('uid') )){</php>
+                                    <td class="center">
+                                        <if condition="$vo.flag eq true">
+                                        <php>if($auth->check( 'admin/feedback/reply_index',  session('uid') )){</php>
+                                        <a href="/admin/feedback/reply_index?mid={$vo.mid}" class="badge badge-success">回复查看</a>&nbsp;&nbsp;
+                                        <php>}</php>
+                                        </if>
+                                        <php>if($auth->check( 'admin/feedback/reply',  session('uid') )){</php>
+                                        <a href="javascript:void(0);" onclick="reply({$vo.mid},{$vo.id})" class="badge badge-primary">回复</a>&nbsp;&nbsp;
+                                        <php>}</php>
+                                        <php>if($auth->check( 'admin/feedback/del',  session('uid') )){</php>
+                                        <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:u('del')}" data-id="{$vo.id}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
+                                        <php>}</php>
+                                    </td>
+                                    <php>}</php>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                         </div>
+                        <div class="col-lg-12" style="float: none">
+                            <div class="pagination" >共{$data.count}条</div>
+                            <ul class="pagination" id="page" style="float: right">{$data.page}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+    <div class="form-group" id="reply" style="display: none;">
+        <div class="col-sm-10" style="margin-top: 15px;width:430px;">
+                <textarea class="form-control" id="reply_v" style="width:400px;margin-top:5px;height:170px;margin-left:3px;" ></textarea>
+        </div>
+    </div>
+    <script>
+        function reply(mid,id){
+            layer.open({
+                title:'回复',
+                type: 1,
+                skin: 'layui-layer-rim', //加上边框
+                shade: 0.6,
+                area: ['450px', '300px'], //宽高
+                content: $('#reply'),
+                btn: ['确定']
+                ,yes: function(index, layero){
+                    var content=$('#reply_v').val();
+                    if(!content){
+                        msg_url('请输入回复内容！');
+                        return false;
+                    }
+
+                    $.post("{:U('admin/feedback/reply')}", {"mid":mid,"id":id,"content":content},
+                            function(data){
+                                msg_url(data.info);
+                                if(data.status==1){
+                                    window.setTimeout("location.reload()",1000);
+                                }
+                            }, "json");
+                    layer.close(index);
+                }
+
+            });
+        }
+
+        function confirm_del_many(){
+            var data=checked_data();
+            if(data==''){
+                msg_url('请选择至少一条留言！')
+                return false;
+            }else{
+                var msg ='确定删除吗？';
+                layer.confirm(msg, {
+                            btn: ['确定','取消'], //按钮
+                        }, function(index){
+                            $.post("{:U('admin/feedback/del_many')}", {"ids":data},
+                                    function(data){
+                                        msg_url(data.info);
+                                        if(data.status==1){
+                                            window.setTimeout("location.reload()",1000);
+                                        }
+                                    }, "json");
+                            layer.close(index);
+                        }
+                );
+            }
+        }
+
+        function checkAll(t,tname){
+            tname = tname?tname:'ids[]';
+            var tcheck = $(t).is(':checked');
+            $("input[name='"+tname+"']").prop('checked', tcheck);
+        }
+
+        function checked_data(){
+            var data= $("#formlist").find("input:checked").map(function(index,elem) {
+                return $(elem).val();
+            }).get().join(',');
+            return data;
+        }
+    </script>
+</block>
+
+

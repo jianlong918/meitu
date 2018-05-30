@@ -1,0 +1,67 @@
+<extend name="common:base" />
+<block name="body">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                <div class="ibox-title">
+                    <h5>权限菜单管理</h5>
+                    <a href="{:U('admin/auth/index')}" class="btn btn-info btn-xs" style='margin-left: 20px' >权限刷新</a>
+                </div>
+                <div class="ibox-content">
+                    <!-- /.panel-heading -->
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dataTables-example">
+                        <form role="form" class="ajaxform form-horizontal" action="{:U('admin/auth/save_many')}"  method="post">
+                        <thead>
+                        <tr>
+                            <th>父级权限</th>
+                            <th>链接</th>
+                            <th>名称</th>
+                            <th>状态</th>
+                            <th>规则</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="new_rule" item="rule">
+                            <tr class="odd gradeX">
+                                <td><select name="pid[]" id="pid" >
+                                    <option value="">请选择</option>
+                                    <option value="0">顶级菜单</option>
+                                    <volist name="auth_rules"  id="vo">
+                                        <option value="{$vo.id}">{$vo.title}</option>
+                                    </volist>
+                                </select></td>
+                                <td><input style="border:none;width:200px;" name="name[]" type="text" value="{$rule}"></td>
+                                <td><input name="title[]" type="text" placeholder="请填写名称"></td>
+                                <td><select name="status[]"  >
+                                    <option value="0">禁用</option>
+                                    <option value="1" selected="selected">启用</option>
+                                </select></td>
+                                <td><input name="condition[]" type="text" placeholder="请填写规则"></td>
+
+                            </tr>
+                        </foreach>
+                        <tr class="odd gradeX">
+                            <td colspan="14">
+                                <button type="submit" class="btn btn-w-m btn-info" >保存</button>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                        </form>
+                    </table>
+                    </div>
+                </div>
+               </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+</block>
+<block name="footer">
+
+</block>

@@ -1,0 +1,67 @@
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-6" style='width: 100%'>
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>会员等级管理</h5>
+                        <php>if($auth->check( 'admin/shoplevel/add',  session('uid') )){</php>
+                        <a href="{:U('admin/shoplevel/add')}" class="btn btn-info btn-xs" style='margin-left: 20px'>添加</a>
+                        <php>}</php>
+                    </div>
+
+                    <div class="ibox-content">
+                        <p style="line-height: 10px;"></p>
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>等级名称</th>
+                                    <th>会员积分</th>
+                                    <th>添加时间</th>
+                                    <php>if($auth->check( 'admin/shoplevel/update',  session('uid') )||$auth->check( 'admin/shoplevel/del',  session('uid') )){</php>
+                                    <th>操作</th>
+                                    <php>}</php>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <volist name="data.list" id="vo">
+                                        <tr class="odd gradeA">
+                                            <td>{$vo.id}</td>
+                                            <td>{$vo.level_name}</td>
+                                            <td>{$vo.amount}</td>
+                                            <td>{$vo.created_at}</td>
+                                            <php>if($auth->check( 'admin/shoplevel/update',  session('uid') )||$auth->check( 'admin/shoplevel/del',  session('uid') )){</php>
+                                            <td class="center">
+                                                <php>if($vo['id']!=1){</php>
+                                                    <php>if($auth->check( 'admin/shoplevel/update',  session('uid') )){</php>
+                                                    <a href="/admin/shoplevel/update?id={$vo.id}" class="badge badge-primary">修改</a>&nbsp;&nbsp;
+                                                    <php>}</php>
+                                                    <php>if($auth->check( 'admin/shoplevel/del',  session('uid') )){</php>
+                                                    <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:u('del')}" data-id="{$vo.id}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
+                                                    <php>}</php>
+                                                <php>}</php>
+                                            </td>
+                                            <php>}</php>
+                                        </tr>
+                                    </volist>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="col-lg-12" style="float: none">
+                            <div class="pagination" >共{$data.count}条</div>
+                            <ul class="pagination" id="page" style="float: right">{$data.page}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+</block>
+

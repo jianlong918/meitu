@@ -1,0 +1,71 @@
+<extend name="common:base" />
+<block name="body">
+<include file="common/header_nav_title" />
+    <p style="height:50px"></p>
+    <div class="jfmxbox">
+        <div class="jftop">
+            <div class="jfm">
+                <div class="jfleft">
+                    当前总积分：
+                </div>
+                <div class="jfright">
+                    {$balance}
+                </div>
+            </div>
+        </div>
+        <p style="height:15px;"></p>
+        <div class="jfmain1">
+            <div class="jftl">
+                <div class="jftlmain">
+                    <div class="jftlleft">来源/用途</div>
+                    <div class="jftlright">积分变化</div>
+                </div>
+            </div>
+
+            <volist name="pay_log" id="vo">
+            <dl class="botsol">
+                <dd class="jfneirong">
+                    <div class="nleft">
+                        <h4>{$vo.name}</h4>
+                        <span>{$vo.created_at}</span>
+                    </div>
+                    <div class="nright <if condition='($vo.process_type eq 1) OR ($vo.process_type eq 3) OR ($vo.process_type eq 4)'> jfred </if>"><if condition='$vo.process_type eq 2'>-<else/>+</if>{$vo.amount}</div>
+                </dd>
+            </dl>
+            </volist>
+            <span id="add_content" style="height: 0px;"></span>
+        </div>
+    </div>
+</block>
+<block name="foot_js">
+    <script>
+        $(function() {
+            /*瀑布流*/
+            var page = 1;
+            var loading = false;
+            $(window).scroll(function() {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height() ) {
+                    loadMore();
+                }
+            });
+
+            function loadMore() {
+                if (loading === false) {
+                    loading = true;
+                    $.post("{:U('member/more_paylog')}", {page: page}, function(data) {
+                        if (data.status==1) {
+                            page++;
+                            var content=data.content
+                            $("#add_content").append(content);
+                            loading = false;
+                        } else {
+                            msg_url(data.info);
+                        }
+                    }, 'json');
+                } else {
+                    return;
+                }
+            }
+        });
+    </script>
+</block>

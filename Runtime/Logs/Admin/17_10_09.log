@@ -1,0 +1,51 @@
+[ 2017-10-09T09:07:59+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=2017-09-01&e_yuyue=&s_ruzhu=2017-10-25&e_ruzhu=&__hash__=c26864b0ebdf5a07a42b1817935e5e73_f3256d431a18f19fb0fa214b1d658ccd
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND `created_at` >= '2017-09-01' AND `begin_time` >= '2017-10-25' LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () AND `created_at` >= '2017-09-01' AND `begin_time` >= '2017-10-25' LIMIT 1  
+
+[ 2017-10-09T09:10:13+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=bba23c15af53218be90f7a536386ff2c_44e3e5123311cf93e81c2c9a42077d3d
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:10:57+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915112&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=a1d46f1a230d974c8701d37383b7528a_00560001a184fa4795a5476e723e4173
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:12:10+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=4e7ef6310be0ab44147fb5fa401a1b79_46e77a01a8e3654af3e6a656b13cf993
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:12:32+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=a1d46f1a230d974c8701d37383b7528a_00560001a184fa4795a5476e723e4173
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:12:49+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=4e7ef6310be0ab44147fb5fa401a1b79_46e77a01a8e3654af3e6a656b13cf993
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:13:29+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=4e7ef6310be0ab44147fb5fa401a1b79_46e77a01a8e3654af3e6a656b13cf993
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:13:42+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=4e7ef6310be0ab44147fb5fa401a1b79_46e77a01a8e3654af3e6a656b13cf993
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:13:59+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=4e7ef6310be0ab44147fb5fa401a1b79_46e77a01a8e3654af3e6a656b13cf993
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:14:15+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=&tel=15964915111&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=a1d46f1a230d974c8701d37383b7528a_00560001a184fa4795a5476e723e4173
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:18:57+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=%E4%BA%8E%E5%BB%BA%E9%BE%99123123&tel=&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=cf2a220925a5394a55f854064694ddc9_5770b3d1570c8c8eb9fee6b856d391ad
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN () LIMIT 1  
+
+[ 2017-10-09T09:45:31+08:00 ] 127.0.0.1 /Admin/login/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yu_user` WHERE ( userName='admin' and password='0ac91bfee1788fb7419cd90009feaa14' ) LIMIT 1   [ RunTime:0.0010s ]
+

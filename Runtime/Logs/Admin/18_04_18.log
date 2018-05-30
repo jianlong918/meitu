@@ -1,0 +1,196 @@
+[ 2018-04-18T14:20:17+08:00 ] 127.0.0.1 /Admin/login/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yu_user` WHERE ( userName='admin' and password='0ac91bfee1788fb7419cd90009feaa14' ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-18T15:17:04+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0020s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,`typeid`,`weight`,`sortup`,`updated_at`,`keywords`,`description`,`sortrank`,`images`) VALUES ('test','123123','/Uploads/images/2018-04-18/5ad6f0d1076c1.jpg','admin','133','7','0','0','2018-04-18 15:17:04','','sdf撒旦法是的','2018-04-18 15:17:04','/Uploads/images/2018-04-18/5ad6f0d7f2def.jpg,/Uploads/images/2018-04-18/5ad6f0d80ce43.jpg') [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `yu_n_addonarticle` [ RunTime:0.0010s ]
+SQL: INSERT INTO `yu_n_addonarticle` (`aid`,`typeid`,`body`) VALUES ('1','7','<p><img src=\"/Uploads/vote/image/20180418/1524035809376872.jpg\" title=\"1524035809376872.jpg\" alt=\"1.jpg\"/></p><p>sdf撒旦法是的</p>') [ RunTime:0.0000s ]
+
+[ 2018-04-18T15:18:19+08:00 ] 127.0.0.1 /admin/shopproduct/usave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_s_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `yu_s_product` SET `name`='威海乳山4A级旅游度 假区 闻涛美域小区5',`typeid`='6',`is_recommend`='0',`price`='600.00',`market_price`='856.00',`max_num`='2',`order_num`='0',`litpic`='/Uploads/images/2017-09-15/59bba95954867.jpg',`province_id`='310000',`city_id`='310100',`area_id`='310118',`address`='',`updated_at`='2017-09-15 18:20:21',`description`='化娱乐”为一体的综合性大型休闲旅游胜地。先后被评为：“国际知名旅游景区”、“国家水利风景区”“国家海洋公园”“中国十佳休闲胜地”、“国际旅游生态示范基地”',`content`='<p><span style=\"color: rgb(34, 34, 34); font-family: Consolas, &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace; font-size: 12px; white-space: pre-wrap; background-color: rgb(255, 255, 255);\">化娱乐”为一体的综合性大型休闲旅游胜地。先后被评为：“国际知名旅游景区”、“国家水利风景区”“国家海洋公园”“中国十佳休闲胜地”、“国际旅游生态示范基地”</span><span style=\"color: rgb(34, 34, 34); font-family: Consolas, &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace; font-size: 12px; white-space: pre-wrap; background-color: rgb(255, 255, 255);\">化娱乐”为一体的综合性大型休闲旅游胜地。先后被评为：“国际知名旅游景区”、“国家水利风景区”“国家海洋公园”“中国十佳休闲胜地”、“国际旅游生态示范基地”</span><span style=\"color: rgb(34, 34, 34); font-family: Consolas, &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace; font-size: 12px; white-space: pre-wrap; background-color: rgb(255, 255, 255);\">化娱乐”为一体的综合性大型休闲旅游胜地。先后被评为：“国际知名旅游景区”、“国家水利风景区”“国家海洋公园”“中国十佳休闲胜地”、“国际旅游生态示范基地”</span><span style=\"color: rgb(34, 34, 34); font-family: Consolas, &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace; font-size: 12px; white-space: pre-wrap; background-color: rgb(255, 255, 255);\">化娱乐”为一体的综合性大型休闲旅游胜地。先后被评为：“国际知名旅游景区”、“国家水利风景区”“国家海洋公园”“中国十佳休闲胜地”、“国际旅游生态示范基地”</span></p>',`images`='/Uploads/images/2017-09-15/59bba95954867.jpg,/Uploads/images/2018-04-18/5ad6f134cc9de.jpg,/Uploads/images/2018-04-18/5ad6f139b2ce6.jpg' WHERE `id` = 12 [ RunTime:0.0350s ]
+
+[ 2018-04-18T17:00:01+08:00 ] 127.0.0.1 /Admin/Newsarticle/del_img.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0020s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+
+[ 2018-04-18T17:00:02+08:00 ] 127.0.0.1 /Admin/login/index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-04-18T17:00:07+08:00 ] 127.0.0.1 /Admin/Newsarticle/del_img.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+
+[ 2018-04-18T17:00:07+08:00 ] 127.0.0.1 /Admin/login/index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-04-18T17:00:15+08:00 ] 127.0.0.1 /Admin/Newsarticle/del_img.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0020s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+
+[ 2018-04-18T17:00:15+08:00 ] 127.0.0.1 /Admin/login/index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-04-18T17:01:14+08:00 ] 127.0.0.1 /admin/auth/save_many.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: INSERT INTO `yu_auth_rule` (`pid`,`name`,`title`,`status`,`condition`) VALUES ('0','admin/newsarticle/del_img','文章图片集删除图片','1','') [ RunTime:0.0010s ]
+SQL: INSERT INTO `yu_auth_rule` (`pid`,`name`,`title`,`status`,`condition`) VALUES ('0','admin/shopmember/del','商城会员删除','1','') [ RunTime:0.0010s ]
+
+[ 2018-04-18T17:01:46+08:00 ] 127.0.0.1 /admin/purview/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `yu_auth_rule` WHERE `name` = 'admin/newsarticle/del_img' AND `id` <> '296' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yu_auth_rule` WHERE `title` = '文章图片集删除图片' AND `id` <> '296' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `yu_auth_rule` SET `pid`='218',`title`='文章图片集删除图片',`name`='admin/newsarticle/del_img',`condition`='',`status`='1' WHERE `id` = 296 [ RunTime:0.0000s ]
+
+[ 2018-04-18T17:01:56+08:00 ] 127.0.0.1 /admin/purview/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `yu_auth_rule` WHERE `name` = 'admin/shopmember/del' AND `id` <> '297' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yu_auth_rule` WHERE `title` = '商城会员删除' AND `id` <> '297' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `yu_auth_rule` SET `pid`='259',`title`='商城会员删除',`name`='admin/shopmember/del',`condition`='',`status`='1' WHERE `id` = 297 [ RunTime:0.0010s ]
+
+[ 2018-04-18T17:02:07+08:00 ] 127.0.0.1 /admin/usergroup/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group` [ RunTime:0.0010s ]
+SQL: UPDATE `yu_auth_group` SET `rules`='16,43,44,45,46,60,71,72,17,52,53,54,55,56,59,70,18,47,49,50,58,202,203,201,216,217,206,207,225,249,250,209,210,211,212,213,214,215,218,219,220,221,222,223,224,226,227,228,229,230,296,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,251,253,254,255,256,257,258,287,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,288,289,290,291,292,293,294' WHERE ( id=1 ) [ RunTime:0.0000s ]
+
+[ 2018-04-18T17:02:14+08:00 ] 127.0.0.1 /Admin/Newsarticle/del_img.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0020s ]
+SQL: SELECT `images` FROM `yu_n_article` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yu_n_article` SET `images`='/Uploads/images/2018-04-18/5ad6f0d7f2def.jpg' WHERE ( id=1 ) [ RunTime:0.0270s ]
+
+[ 2018-04-18T17:02:18+08:00 ] 127.0.0.1 /admin/newsarticle/usave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meinv\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `yu_n_article` SET `title`='test',`shorttitle`='123123',`litpic`='/Uploads/vote/image/20180418/1524035809376872.jpg',`writer`='admin',`click`='133',`typeid`='7',`notpost`='0',`weight`='0',`sortup`='0',`updated_at`='2018-04-18 15:17:04',`keywords`='',`description`='sdf撒旦法是的',`sortrank`='2018-04-18 15:17:04' WHERE `id` = 1 [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `yu_n_addonarticle` [ RunTime:0.0010s ]
+SQL: UPDATE `yu_n_addonarticle` SET `typeid`='7',`body`='<p><img src=\"/Uploads/vote/image/20180418/1524035809376872.jpg\" title=\"1524035809376872.jpg\" alt=\"1.jpg\"/></p><p>sdf撒旦法是的</p>' WHERE `aid` = 1 [ RunTime:0.0010s ]
+

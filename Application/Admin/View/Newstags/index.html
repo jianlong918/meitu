@@ -1,0 +1,74 @@
+<extend name="common:base" />
+<block name="body">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-6" style='width: 100%'>
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Tags标签管理</h5>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>标签</th>
+                                    <th>点击</th>
+                                    <th>文档数</th>
+                                    <th>添加时间</th>
+                                    <php>if($auth->check( 'admin/newstags/update',  session('uid') )||$auth->check( 'admin/newstags/del',  session('uid'))){</php>
+                                    <th>操作</th>
+                                    <php>}</php>
+                                </tr>
+                            </thead>
+                            <tbody id="formlist">
+                            <volist name="data.list" id="vo">
+                                <tr class="odd gradeA">
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.tag}</td>
+                                    <td><input type="text" id="count_{$vo.id}" value="{$vo.count}"></td>
+                                    <td>{$vo.total}</td>
+                                    <td>{$vo.created_at}</td>
+                                    <php>if($auth->check( 'admin/newstags/update',  session('uid') )||$auth->check( 'admin/newstags/del',  session('uid') )){</php>
+                                    <td class="center">
+                                        <php>if($auth->check( 'admin/newstags/update',  session('uid') )){</php>
+                                        <a href="javascript:void(0);" onclick="update({$vo.id})" class="badge badge-primary">修改</a>&nbsp;&nbsp;
+                                        <php>}</php>
+                                        <php>if($auth->check( 'admin/newstags/del',  session('uid') )){</php>
+                                        <a href="javascript:void(0);" class="badge badge-danger" onclick="confirm_del(this)" data-url="{:u('del')}" data-id="{$vo.tag}" data-msg="确定要删除吗">删除</a>&nbsp;&nbsp;
+                                        <php>}</php>
+                                    </td>
+                                    <php>}</php>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    <script>
+        function update(id){
+            var count=$('#count_'+id).val();
+            if(!/^\+?(0|[1-9][0-9]*)$/.test(count)){
+                msg_url('点击量格式错误！');
+            }
+            $.post("{:U('admin/newstags/update')}", {"id":id,"count":count},
+                    function(data){
+                        msg_url(data.info);
+                        if(data.status==1){
+                            window.setTimeout("location.reload()",1000);
+                        }
+                    }, "json");
+        }
+    </script>
+
+</block>
+

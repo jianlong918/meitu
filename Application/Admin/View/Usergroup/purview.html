@@ -1,0 +1,61 @@
+<extend name="common:base" />
+<block name="header">
+    <link href="__PUBLIC__/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+</block>
+<block name="body">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="page-header"></h1>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+            <b>权限管理</b>&nbsp;&nbsp;&nbsp;
+                </div>
+                <form action="{:U('admin/usergroup/save')}" class="ajaxform" method="post">
+                <div class="panel panel-default">
+
+                    <!-- /.panel-heading -->
+
+                    <table class="table  table-bordered table-hover" id="dataTables-example" style="border-width:1px; width:100%;">
+                        <input type="hidden" value="{$id}" name="id"/>
+                        {$menu}
+                        <tr><td colspan="7" align="center"><button type="submit" class="btn btn-w-m btn-info"><i class="fa fa-check"></i>&nbsp;提交</button></td></tr>
+                    </table>
+
+
+
+                </div>
+                </form>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- /#page-wrapper -->
+
+</block>
+<block name="footer">
+    <script>
+        function check(id){
+            var classname=$("#son"+id).attr("class");
+            var number=classname.substr(3);
+            if($("#son"+id).is(':checked')){
+                $("#parent"+number).prop('checked', 'true');
+            }
+        }
+
+        function check1(i){
+            if($("#parent"+i).is(':checked')){
+                $(".son"+i).prop('checked', 'true');
+            }
+
+            if(!$("#parent"+i).is(':checked')){
+                $(".son"+i).removeAttr("checked");
+            }
+        }
+    </script>
+
+</block>

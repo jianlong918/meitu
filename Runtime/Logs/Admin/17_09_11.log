@@ -1,0 +1,35 @@
+[ 2017-09-11T08:31:42+08:00 ] 127.0.0.1 /admin/newstype/usave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0020s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','252','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_n_type` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\yl_yifangyou\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `yu_n_type` WHERE `typename` = '关于易房游' AND `id` <> '7' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\yl_yifangyou\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `yu_n_type` SET `typename`='关于易房游',`pid`='0',`sortrank`='0',`content`='<p>易房游是旅居国际（香港）控股有限公司专属的商城板块，目前在山东，海南，广西，海南等省份十余个城市设有旅居置换基地数十个，合作项目涵盖旅居地产，特色小镇，养老基地，星级酒店，民宿客栈众多业态。</p><p class=\"p1\"><img src=\"/Public/wxhome/img/y1.jpg\" width=\"100%\"/></p><p>作为旅居模式在中国的典型代表，易房游旨在为旅居者和置换基地搭建一个诚信、有保障的在线沟通和预定平台，并通过财产、人身安全保障方案和会员身份识别等机制建立绿色平台生态系统，有效的链接旅居者和置换基地，加强旅居者和置换基地之间的社交关系及交互，为旅居者提供丰富多彩且具人情味的住宿体验。</p>' WHERE `id` = 7 [ RunTime:0.0000s ]
+
+[ 2017-09-11T08:32:01+08:00 ] 127.0.0.1 /admin/newstype/usave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','252','218','219','220','221','222','223','224','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_n_type` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\yl_yifangyou\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `yu_n_type` WHERE `typename` = '会员须知' AND `id` <> '8' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\yl_yifangyou\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `yu_n_type` SET `typename`='会员须知',`pid`='0',`sortrank`='0',`content`='<p>1.预定（通过易房游平台）</p><p>1.1在线预定</p><p>登录易房游平台会员中心，按照系统提示完成您的预定，在您填写定单时，务必留下准确入住人姓名（请确保与所使用的有效证件信息一致）及联系人手机号码。</p><p>1.2预定时间</p><p>1.2.1入住旅居国际自营旅居基地应提前7日预定，7、8月份和五一、十一黄金周应提前15天预定。</p><p>1.2.2入住旅居国际合作置换基地淡季应提前10天预定，旺季应提前15-20天预定。</p><p>1.2.3一旦预定，48小时内乙方具备撤销权，超过48小时，视为预定费用发生。</p><p>1.2.4预定成功后，系统客服人员会及时安排，48小时后通过系统确认和电话通知预定人，预定人可安排自己行程。</p><p>2.费用说明</p><p>2.1旅居国际自营置换基地费用按照购买服务合同内容实施。</p><p>2.2旅居国际置换基地费用按照平台显示价格为准，此价格为合约价。</p><p>2.3平台所显示的价格仅为房费，不包含其他费用。</p><p>2.4平台价格可能因为合作基地变更或者其他因素发生变化，请以最终确认为主。</p><p>3.入住、延住与其他</p><p>3.1旅居国际自营基地度假卡有效期内用购卡款消费的时间累计计算，一次性连续入住消费时间不足7日的按7日计算，一次性连续入住消费时间不足15日按15日计算。满15日以上的按实际入住时间计算，每年入住消费时间不得低于30天，每年累计入住消费时间不足30日或未入住的均按30日计算。</p><p>3.2旅居国际置换基地入住按卡值金额消费，享受合约价格，部分置换基地最低起住时间为7天，按照平台公示信息为准。</p><p>3.3旅居国际自营基地和置换基地在卡值消费完毕，出现延住情况仍然继续居住的，按照旅居国际自营基地和置换基地的收费标准支付费用。</p><p>4.权利和责任</p><p>4.1根据平台展示，您可以按照自己意愿选择旅居基地。</p><p>4.2享受旅居国际自营基地基础服务，享受旅居国际置换基地合约价格和置换基地专属服务</p><p>4.3入住期间，应服从旅居基地的管理。不服从管理的，有权拒绝入住，并不退还服务费。</p><p>4.4入住期间损坏财产或造成他人损害的，要予以赔偿。</p><p>5.免责条款</p><p>5.1旅居国际易房游平台所列基地所有信息属实，但并不代表建议去的这些地方旅居或认为没有风险，对于去这些地方旅居造成的损害或损失，旅居国际、易房游平台，不承担任何责任。</p><p>5.2旅居国际、易房游平台对您出行，入住期间发生的意外不承担任何责任，建议您购买旅行险。</p><p>5.3对于服务器错误、误导或者重新导入传输，网络链接失败、传输或接受预定中断或病毒或其他技术缺陷（人为的或技术的）造成的故障，请于48小时内联系客服人员申诉解决，逾时旅居国际和易房游平台不承担任何责任。</p><p>第四条：实行时间</p><p>本规范于即日起正式实施</p><p>第五条：附则</p><p>本标准最终解释权旅居国际（香港）控股有限公司所有。</p>' WHERE `id` = 8 [ RunTime:0.0010s ]
+
+[ 2017-09-11T11:48:17+08:00 ] 127.0.0.1 /Admin/login/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yu_user` WHERE ( userName='admin' and password='0ac91bfee1788fb7419cd90009feaa14' ) LIMIT 1   [ RunTime:0.0000s ]
+

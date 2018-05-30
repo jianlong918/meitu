@@ -1,0 +1,129 @@
+[ 2018-05-30T14:43:08+08:00 ] 127.0.0.1 /Admin/login/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yu_user` WHERE ( userName='admin' and password='0ac91bfee1788fb7419cd90009feaa14' ) LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2018-05-30T14:50:34+08:00 ] 127.0.0.1 /admin/newstype/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_n_type` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `yu_n_type` WHERE `typename` = '新闻' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `yu_n_type` (`typename`,`pid`,`sortrank`) VALUES ('新闻','0','0') [ RunTime:0.0000s ]
+
+[ 2018-05-30T14:51:05+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0020s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp64\www\1Test\meitu\Application\Admin\Controller\NewsarticleController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-05-30T14:59:07+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp64\www\1Test\meitu\Application\Admin\Controller\NewsarticleController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-05-30T14:59:38+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp64\www\1Test\meitu\Application\Admin\Controller\NewsarticleController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+ERR: 1048:Column 'images' cannot be null
+ [ SQL语句 ] : INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,`typeid`,`weight`,`sortup`,`updated_at`,`keywords`,`description`,`sortrank`,`images`) VALUES ('123123','','','admin','182','10','0','0','2018-05-30 14:59:38','','123','2018-05-30 14:59:38',NULL)
+ERR: 1048:Column 'images' cannot be null
+ [ SQL语句 ] : INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,`typeid`,`weight`,`sortup`,`updated_at`,`keywords`,`description`,`sortrank`,`images`) VALUES ('123123','','','admin','182','10','0','0','2018-05-30 14:59:38','','123','2018-05-30 14:59:38',NULL)
+
+[ 2018-05-30T15:00:06+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp64\www\1Test\meitu\Application\Admin\Controller\NewsarticleController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-05-30T15:00:22+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp64\www\1Test\meitu\Application\Admin\Controller\NewsarticleController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-05-30T15:00:31+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp64\www\1Test\meitu\Application\Admin\Controller\NewsarticleController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+ERR: 1048:Column 'images' cannot be null
+ [ SQL语句 ] : INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,`typeid`,`weight`,`sortup`,`updated_at`,`keywords`,`description`,`sortrank`,`images`) VALUES ('·123','','','admin','185','10','0','0','2018-05-30 15:00:31','','123','2018-05-30 15:00:31',NULL)
+ERR: 1048:Column 'images' cannot be null
+ [ SQL语句 ] : INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,`typeid`,`weight`,`sortup`,`updated_at`,`keywords`,`description`,`sortrank`,`images`) VALUES ('·123','','','admin','185','10','0','0','2018-05-30 15:00:31','','123','2018-05-30 15:00:31',NULL)
+
+[ 2018-05-30T15:06:55+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-05-30T15:07:00+08:00 ] 127.0.0.1 /admin/newsarticle/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yu_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM yu_auth_group_access a INNER JOIN yu_auth_group g on a.group_id=g.id  WHERE ( a.uid='30' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yu_auth_rule` [ RunTime:0.0010s ]
+SQL: SELECT `condition`,`name` FROM `yu_auth_rule` WHERE `id` IN ('16','43','44','45','46','60','71','72','17','52','53','54','55','56','59','70','18','47','49','50','58','202','203','201','216','217','206','207','225','249','250','209','210','211','212','213','214','215','218','219','220','221','222','223','224','226','227','228','229','230','296','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','251','253','254','255','256','257','258','287','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','288','289','290','291','292','293','294') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yu_n_article` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: validate D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\wamp64\www\1Test\meitu\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `yu_n_article` (`title`,`shorttitle`,`litpic`,`writer`,`click`,`typeid`,`weight`,`sortup`,`updated_at`,`keywords`,`description`,`sortrank`,`images`) VALUES ('123','','','admin','149','10','0','0','2018-05-30 15:07:00','','123','2018-05-30 15:07:00','/Uploads/images/2018-05-30/5b0e4d8cbca43.gif') [ RunTime:0.0410s ]
+SQL: SHOW COLUMNS FROM `yu_n_addonarticle` [ RunTime:0.0050s ]
+SQL: INSERT INTO `yu_n_addonarticle` (`aid`,`typeid`,`body`) VALUES ('2','10','<p>123</p>') [ RunTime:0.0070s ]
+

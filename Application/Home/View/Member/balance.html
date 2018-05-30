@@ -1,0 +1,22 @@
+<extend name="common:base" />
+<block name="body">
+<include file="common/header_nav_title" />
+
+    <p style="height:70px"></p>
+    <style>
+
+    </style>
+
+    <div class="myjf">
+        <h4><img src="__PUBLIC__/Wehome/img/qianbi.jpg"></h4>
+        <h5>{$balance}</h5>
+
+        <div class="jfmain">
+            <h3>积分说明</h3>
+            <p style="margin-top:10px">1、积分是线下协议会员购买的会员服务体现</p>
+            <p>2、积分可用于在商城内预约旅居地产、民宿客栈、星级酒店、海景洋房、特色小镇、养老基地等。</p>
+            <a href="{:U('Wehome/member/paylog')}">积分明细</a>
+        </div>
+
+    </div>
+</block>

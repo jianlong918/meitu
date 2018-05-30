@@ -1,0 +1,4 @@
+[ 2017-10-07T16:30:00+08:00 ] 127.0.0.1 /admin/shoporder/index.html?order_sn=&status=0&real_name=aa&product_name=&s_yuyue=&e_yuyue=&s_ruzhu=&e_ruzhu=&__hash__=4e7ef6310be0ab44147fb5fa401a1b79_46e77a01a8e3654af3e6a656b13cf993
+ERR: 1054:Unknown column 'Array' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yu_s_order` WHERE `status` <> 6 AND `id` IN (Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array,Array) LIMIT 1  
+

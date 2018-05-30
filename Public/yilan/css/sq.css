@@ -1,0 +1,36 @@
+.hides{display: none;}
+.login{width: 400px;height: 320px;position: relative;left: 50%;top: 50%;margin: -160px 0 0 -200px;}
+.login_btn button{width: 100%;height: 50px;border-radius: 50px;}
+.input-group{height: 50px;border-radius: 50px;overflow: hidden;border: 1px solid #a8b7c1;margin: 23px 0;}
+.login_tit{text-align: center;}
+.login_tit img{position: relative;}
+.login_tit span{font-size: 20px;color: #0084d0;font-weight: bold;margin-left: 15px;}
+.findlan {position: fixed;right: 20px;bottom: 8%;z-index: 999;}
+.ly_company{position: absolute;bottom: 8%;z-index: 999;color: #8ba8bd;height: 65px;bottom: 0;width: 100%;}
+.ly_company p{text-align: center;}
+.lan_bg p {position: absolute;right: 0; top: 0; cursor: pointer;}
+#preloader{background: url() center center no-repeat;background-size: cover;}
+.put{color: #9b9b9b;line-height: 42px;text-align: center}
+.put span{position: relative; top: -1px;margin-right: 8px;}
+.yL{display: none;}
+.yL img{display: block;}
+
+@media only screen and (min-width: 320px) and (max-width: 414px){
+	.login{width: 80vw;height: 320px;position: relative;left: 50%;top: 50%;margin: -160px 0 0 -40vw;}
+	.login_btn button{width: 100%;height: 50px;border-radius: 50px;}
+	.input-group{height: 50px;border-radius: 50px;overflow: hidden;border: 1px solid #a8b7c1;margin: 28px 0;}
+	.login_tit{text-align: center;}
+	.login_tit img{position: relative;}
+	.login_tit span{font-size: 20px;color: #0084d0;font-weight: bold;margin-left: 15px;}
+	.findlan {position: fixed;right: 20px;bottom: 8%;z-index: 999;}
+	.ly_company{position: absolute;z-index: 999;color: #8ba8bd;bottom: 0;width: 100%;font-size: 10px;height: 50px;}
+	.ly_company p{text-align: center;margin-bottom: 2px !important;}
+	.lan_bg p {position: absolute;right: 0; top: 0; cursor: pointer;}
+	#preloader{background: url() center center no-repeat;background-size: cover;}
+	.put{color: #9b9b9b;line-height: 42px;text-align: center}
+	.put span{position: relative; top: -1px;margin-right: 8px;}
+	.banben{display: none;}
+	.yL{display: block;}
+	.yL img{width: 100%;}
+}
+
