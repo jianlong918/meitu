@@ -28,3 +28,12 @@ ERR: 无法加载模块:Public
 [ 2018-05-31T08:18:26+08:00 ] 127.0.0.1 /Wehome/Newsarticle/index/id/7.html
 ERR: 无法加载模块:Wehome
 
+[ 2018-05-31T21:18:29+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 无法加载模块:Favicon
+
+[ 2018-05-31T21:19:00+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 无法加载模块:Favicon
+
+[ 2018-05-31T21:19:55+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 无法加载模块:Favicon
+
