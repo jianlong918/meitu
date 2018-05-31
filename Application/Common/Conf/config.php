@@ -23,7 +23,7 @@ return array(
 
 //    'LOG_RECORD' => true, // 开启日志记录
 //    'LOG_LEVEL'  =>'EMERG,ALERT,CRIT,ERR', // 只记录EMERG ALERT CRIT ERR 错误
-    'DEFAULT_MODULE' => 'Wehome', //默认版块
+    'DEFAULT_MODULE' => 'Home', //默认版块
 
     'TOKEN_ON'      =>    true,  // 是否开启令牌验证 默认关闭
     'TOKEN_NAME'    =>    '__hash__',    // 令牌验证的表单隐藏字段名称，默认为__hash__

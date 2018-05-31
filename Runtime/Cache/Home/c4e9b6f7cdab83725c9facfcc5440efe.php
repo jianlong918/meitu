@@ -16,13 +16,13 @@
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item">
-                <a href="/"><i class="iconfont icon-jiaoliu"></i>交流</a>
+                <a href="/">交流</a>
             </li>
             <li class="layui-nav-item layui-this">
-                <a href=""><i class="iconfont icon-iconmingxinganli"></i>案例</a>
+                <a href="">案例</a>
             </li>
             <li class="layui-nav-item">
-                <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
+                <a href="http://www.layui.com/" target="_blank">框架</a>
             </li>
         </ul>
 
@@ -33,10 +33,10 @@
                 <a class="iconfont icon-touxiang layui-hide-xs" href="../user/login.html"></a>
             </li>
             <li class="layui-nav-item">
-                <a href="../user/login.html">登入</a>
+                <a href="<?php echo U('member/login');?>">登入</a>
             </li>
             <li class="layui-nav-item">
-                <a href="../user/reg.html">注册</a>
+                <a href="<?php echo U('member/reg');?>">注册</a>
             </li>
             <li class="layui-nav-item layui-hide-xs">
                 <a href="" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" title="QQ登入" class="iconfont icon-qq"></a>
@@ -127,7 +127,6 @@
     </p>
 </div>
 
-<script src="/Public/flyres/layui/layui.js"></script>
 <div class="fly-footer">
     <p><a href="http://fly.layui.com/" target="_blank">Fly社区</a> 2017 &copy; <a href="http://www.layui.com/" target="_blank">layui.com 出品</a></p>
     <p>
@@ -136,6 +135,6 @@
         <a href="http://fly.layui.com/jie/2461/" target="_blank">微信公众号</a>
     </p>
 </div>
-
+<script src="/Public/flyres/layui/layui.js"></script>
 </body>
 </html>

@@ -16,13 +16,13 @@
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item">
-                <a href="/"><i class="iconfont icon-jiaoliu"></i>交流</a>
+                <a href="/">交流</a>
             </li>
             <li class="layui-nav-item layui-this">
-                <a href=""><i class="iconfont icon-iconmingxinganli"></i>案例</a>
+                <a href="">案例</a>
             </li>
             <li class="layui-nav-item">
-                <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
+                <a href="http://www.layui.com/" target="_blank">框架</a>
             </li>
         </ul>
 
@@ -33,10 +33,10 @@
                 <a class="iconfont icon-touxiang layui-hide-xs" href="../user/login.html"></a>
             </li>
             <li class="layui-nav-item">
-                <a href="../user/login.html">登入</a>
+                <a href="<?php echo U('member/login');?>">登入</a>
             </li>
             <li class="layui-nav-item">
-                <a href="../user/reg.html">注册</a>
+                <a href="<?php echo U('member/reg');?>">注册</a>
             </li>
             <li class="layui-nav-item layui-hide-xs">
                 <a href="" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" title="QQ登入" class="iconfont icon-qq"></a>
@@ -77,7 +77,7 @@
             <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                 <div class="layui-tab-item layui-show">
                     <div class="layui-form layui-form-pane">
-                        <form method="post">
+                        <form method="post" class="ajaxform" action="<?php echo U('Home/member/reg');?>">
                             <div class="layui-form-item">
                                 <label for="L_email" class="layui-form-label">邮箱</label>
                                 <div class="layui-input-inline">
@@ -139,7 +139,9 @@
     </p>
 </div>
 <script src="/Public/flyres/layui/layui.js"></script>
-
+<script src="/Public/js/jquery-1.9.1.min.js"></script>
+<script src="/Public/js/jquery.form.min.js"></script>
+<script src="/Public/js/commonwehome.js"></script>
 
 </body>
 </html>
